@@ -58,16 +58,6 @@ class WebSocketTaskConnection: NSObject, WebSocketConnection, URLSessionWebSocke
         webSocketTask.cancel(with: .goingAway, reason: nil)
     }
     
-    func syncState(state: URLSessionWebSocketTask.State) {
-        switch state {
-        case .completed:
-            delegate?.onConnected(connection: self)
-        case .suspended:
-            delegate?.onDisconnected(connection: self, error:nil)
-        default: break
-        }
-    }
-    
     func listen()  {
         webSocketTask.receive { result in
             switch result {
