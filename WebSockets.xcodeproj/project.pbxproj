@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,10 @@
 		AD10D2EE22B7E1BF006AABAB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD10D2ED22B7E1BF006AABAB /* Preview Assets.xcassets */; };
 		AD10D2F122B7E1BF006AABAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD10D2EF22B7E1BF006AABAB /* LaunchScreen.storyboard */; };
 		AD10D2F922B7E237006AABAB /* WebSocketConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD10D2F822B7E237006AABAB /* WebSocketConnection.swift */; };
+		AD95920922CA612F003E995D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD95920822CA612F003E995D /* main.swift */; };
+		AD95921022CA619A003E995D /* NIOWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = AD95920F22CA619A003E995D /* NIOWebSocket */; };
+		AD95921222CA619A003E995D /* NIO in Frameworks */ = {isa = PBXBuildFile; productRef = AD95921122CA619A003E995D /* NIO */; };
+		AD95921522CA61AF003E995D /* NIOHTTP1 in Frameworks */ = {isa = PBXBuildFile; productRef = AD95921422CA61AF003E995D /* NIOHTTP1 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,9 @@
 		AD10D2F022B7E1BF006AABAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AD10D2F222B7E1BF006AABAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD10D2F822B7E237006AABAB /* WebSocketConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketConnection.swift; sourceTree = "<group>"; };
+		AD95920622CA612F003E995D /* WSServer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = WSServer; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD95920822CA612F003E995D /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = main.swift; path = Sources/WSServer/main.swift; sourceTree = "<group>"; };
+		AD95920A22CA612F003E995D /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +43,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AD95920422CA612F003E995D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD95921522CA61AF003E995D /* NIOHTTP1 in Frameworks */,
+				AD95921022CA619A003E995D /* NIOWebSocket in Frameworks */,
+				AD95921222CA619A003E995D /* NIO in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -43,7 +60,9 @@
 			isa = PBXGroup;
 			children = (
 				AD10D2E322B7E1BD006AABAB /* WebSockets */,
+				AD95920722CA612F003E995D /* WSServer */,
 				AD10D2E222B7E1BD006AABAB /* Products */,
+				AD95921322CA61AF003E995D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				AD10D2E122B7E1BD006AABAB /* WebSockets.app */,
+				AD95920622CA612F003E995D /* WSServer */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -78,6 +98,22 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		AD95920722CA612F003E995D /* WSServer */ = {
+			isa = PBXGroup;
+			children = (
+				AD95920822CA612F003E995D /* main.swift */,
+				AD95920A22CA612F003E995D /* Package.swift */,
+			);
+			path = WSServer;
+			sourceTree = "<group>";
+		};
+		AD95921322CA61AF003E995D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -98,6 +134,28 @@
 			productReference = AD10D2E122B7E1BD006AABAB /* WebSockets.app */;
 			productType = "com.apple.product-type.application";
 		};
+		AD95920522CA612F003E995D /* WSServer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD95920D22CA612F003E995D /* Build configuration list for PBXNativeTarget "WSServer" */;
+			buildPhases = (
+				AD95920222CA612F003E995D /* Build Swift Package Manager Dependencies */,
+				AD95920322CA612F003E995D /* Sources */,
+				AD95920422CA612F003E995D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WSServer;
+			packageProductDependencies = (
+				AD95920F22CA619A003E995D /* NIOWebSocket */,
+				AD95921122CA619A003E995D /* NIO */,
+				AD95921422CA61AF003E995D /* NIOHTTP1 */,
+			);
+			productName = WSServer;
+			productReference = AD95920622CA612F003E995D /* WSServer */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -111,6 +169,9 @@
 					AD10D2E022B7E1BD006AABAB = {
 						CreatedOnToolsVersion = 11.0;
 					};
+					AD95920522CA612F003E995D = {
+						CreatedOnToolsVersion = 11.0;
+					};
 				};
 			};
 			buildConfigurationList = AD10D2DC22B7E1BD006AABAB /* Build configuration list for PBXProject "WebSockets" */;
@@ -122,11 +183,15 @@
 				Base,
 			);
 			mainGroup = AD10D2D822B7E1BD006AABAB;
+			packageReferences = (
+				AD95920E22CA619A003E995D /* XCRemoteSwiftPackageReference "swift-nio" */,
+			);
 			productRefGroup = AD10D2E222B7E1BD006AABAB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				AD10D2E022B7E1BD006AABAB /* WebSockets */,
+				AD95920522CA612F003E995D /* WSServer */,
 			);
 		};
 /* End PBXProject section */
@@ -144,6 +209,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		AD95920222CA612F003E995D /* Build Swift Package Manager Dependencies */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Build Swift Package Manager Dependencies";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "SPM_IMAGE=SwiftNIO verbose=no swift xcode build";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AD10D2DD22B7E1BD006AABAB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -153,6 +239,14 @@
 				AD10D2E722B7E1BD006AABAB /* SceneDelegate.swift in Sources */,
 				AD10D2E922B7E1BD006AABAB /* ContentView.swift in Sources */,
 				AD10D2F922B7E237006AABAB /* WebSocketConnection.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD95920322CA612F003E995D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD95920922CA612F003E995D /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +418,40 @@
 			};
 			name = Release;
 		};
+		AD95920B22CA612F003E995D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EEJA65ZWYD;
+				ENABLE_HARDENED_RUNTIME = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/$(PRODUCT_NAME)/.buildzz/.build/Xcode/$(PLATFORM_PREFERRED_ARCH)-apple-$(SWIFT_PLATFORM_TARGET_PREFIX)$($(DEPLOYMENT_TARGET_SETTING_NAME))/$(CONFIGURATION)";
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/$(PRODUCT_NAME)/.buildzz/.build/Xcode/$(PLATFORM_PREFERRED_ARCH)-apple-$(SWIFT_PLATFORM_TARGET_PREFIX)$($(DEPLOYMENT_TARGET_SETTING_NAME))/$(CONFIGURATION)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				OTHER_LDFLAGS = "-lXcodeSPMDependencies";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/$(PRODUCT_NAME)/.buildzz/.build/$(PLATFORM_PREFERRED_ARCH)-apple-$(SWIFT_PLATFORM_TARGET_PREFIX)$($(DEPLOYMENT_TARGET_SETTING_NAME))/$(CONFIGURATION)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		AD95920C22CA612F003E995D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EEJA65ZWYD;
+				ENABLE_HARDENED_RUNTIME = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/$(PRODUCT_NAME)/.buildzz/.build/Xcode/$(PLATFORM_PREFERRED_ARCH)-apple-$(SWIFT_PLATFORM_TARGET_PREFIX)$($(DEPLOYMENT_TARGET_SETTING_NAME))/$(CONFIGURATION)";
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/$(PRODUCT_NAME)/.buildzz/.build/Xcode/$(PLATFORM_PREFERRED_ARCH)-apple-$(SWIFT_PLATFORM_TARGET_PREFIX)$($(DEPLOYMENT_TARGET_SETTING_NAME))/$(CONFIGURATION)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				OTHER_LDFLAGS = "-lXcodeSPMDependencies";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/$(PRODUCT_NAME)/.buildzz/.build/$(PLATFORM_PREFERRED_ARCH)-apple-$(SWIFT_PLATFORM_TARGET_PREFIX)$($(DEPLOYMENT_TARGET_SETTING_NAME))/$(CONFIGURATION)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -345,7 +473,45 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		AD95920D22CA612F003E995D /* Build configuration list for PBXNativeTarget "WSServer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD95920B22CA612F003E995D /* Debug */,
+				AD95920C22CA612F003E995D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AD95920E22CA619A003E995D /* XCRemoteSwiftPackageReference "swift-nio" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-nio.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.9.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AD95920F22CA619A003E995D /* NIOWebSocket */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD95920E22CA619A003E995D /* XCRemoteSwiftPackageReference "swift-nio" */;
+			productName = NIOWebSocket;
+		};
+		AD95921122CA619A003E995D /* NIO */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD95920E22CA619A003E995D /* XCRemoteSwiftPackageReference "swift-nio" */;
+			productName = NIO;
+		};
+		AD95921422CA61AF003E995D /* NIOHTTP1 */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD95920E22CA619A003E995D /* XCRemoteSwiftPackageReference "swift-nio" */;
+			productName = NIOHTTP1;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AD10D2D922B7E1BD006AABAB /* Project object */;
 }

@@ -40,8 +40,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WebSocketConnectionDelega
     var webSocketConnection: WebSocketConnection!
  
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        
         webSocketConnection = WebSocketTaskConnection(url: URL(string: "ws://0.0.0.0:8080/echo")!)
         webSocketConnection.delegate = self
         
